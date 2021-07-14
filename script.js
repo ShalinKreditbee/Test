@@ -34,11 +34,11 @@ function getnation(countryName) {
 
 }
 
-function getVaccineSlotsByDistrict(date) {
+function getVaccineSlotsByDistrict(date, num) {
     const request = new XMLHttpRequest();
 
-    request.open('GET', `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=770&date=${date}`)
-
+    request.open('GET', `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${num}&date=${date}`)
+    console.log(`https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=${num}&date=${date}`)
     request.send();
 
     request.addEventListener('load', function () {
@@ -72,7 +72,14 @@ function getVaccineSlotsByDistrict(date) {
     })
 }
 
+function myFunction() {
+    var dateControl = document.querySelector('input[type="date"]');
+    console.log(typeof (dateControl.value))
 
-getVaccineSlotsByDistrict("15-07-2021")
-
-//getnation("china")
+    const myArr = dateControl.value.split("-");
+    console.log(myArr)
+    let nd = myArr[2] + '-' + myArr[1] + '-' + myArr[0]
+    console.log(nd)
+    console.log(document.querySelector('input[type="number"]').value);
+    getVaccineSlotsByDistrict(nd, document.querySelector('input[type="number"]').value);
+}
