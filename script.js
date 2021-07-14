@@ -37,7 +37,7 @@ function getnation(countryName) {
 function getVaccineSlotsByDistrict(date) {
     const request = new XMLHttpRequest();
 
-    request.open('GET', `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=16&date=${date}`)
+    request.open('GET', `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=770&date=${date}`)
 
     request.send();
 
