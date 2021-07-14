@@ -73,6 +73,6 @@ function getVaccineSlotsByDistrict(date) {
 }
 
 
-getVaccineSlotsByDistrict("15-07-2021")
+getVaccineSlotsByDistrict("16-07-2021")
 
 //getnation("china")
